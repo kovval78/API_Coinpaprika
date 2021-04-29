@@ -1,4 +1,7 @@
 {
+    "fzaninotto/faker": {
+        "version": "1.9-dev"
+    },
     "psr/cache": {
         "version": "2.0.0"
     },
