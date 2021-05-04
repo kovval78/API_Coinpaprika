@@ -11,7 +11,6 @@ use Symfony\Component\Console\Application;
 
 $app = new Application();
 
-$app->add(new MessageCommand());
 $app->add(new AskCoinCommand());
 
 $app->run();

@@ -33,6 +33,18 @@ class AskCoinCommand extends Command
             "Enter your second currency : ", "USD"
         ));
 
+
+
+        $link = new LinkCreator($curr1, $curr2);
+
+        $httpClient = new HttpClient();
+
+        $response = $httpClient->getResponse($link);
+
+        $ret = new ResponseParser($response)
+
+
+
         $message = sprintf("Your currencies are %s/%s", $curr1, $curr2);
 
         $output->writeln($message);
