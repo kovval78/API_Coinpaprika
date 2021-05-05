@@ -25,24 +25,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => '19165db6357f2d09de80daa1865025dd2fdab600',
+    'reference' => '555230a50615fa6b4605a84f720606cad1e5e934',
     'name' => 'kkowalczyk/api_coin',
   ),
   'versions' => 
   array (
     'kkowalczyk/api_coin' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '19165db6357f2d09de80daa1865025dd2fdab600',
+      'reference' => '555230a50615fa6b4605a84f720606cad1e5e934',
     ),
     'php-http/async-client-implementation' => 
     array (
@@ -98,7 +98,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '17cbb9e9e631c20bd5fd9ba3f507e6de6adcf843',
+      'reference' => '959bfea5f92bd9b0b278f458a69cfd3f96dd411d',
     ),
     'symfony/deprecation-contracts' => 
     array (
@@ -213,7 +213,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '01454c66c88a6bb4449dcdeb913e463e075f331b',
+      'reference' => '8f93c44e31d2692e782cc0bdede50cf116b01f4e',
+    ),
+    'symfony/var-dumper' => 
+    array (
+      'pretty_version' => '5.x-dev',
+      'version' => '5.9999999.9999999.9999999-dev',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ff77601582f1ffe003ca43f3860e096d0937a96a',
     ),
   ),
 );

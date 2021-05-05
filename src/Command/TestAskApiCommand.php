@@ -5,12 +5,13 @@ namespace App\Command;
 use Symfony\Component\Console\Command\Command;
 //use App\HttpClient\SymfonyHttp;
 use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Component\HttpClient\CurlHttpClient;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
-use App\MyClasses\LinkCreator;
+//use App\MyClasses\LinkCreator;
 
-class AskCoinCommand extends Command
+class TestAskApiCommand extends Command
 {
     protected function configure()
     {
@@ -35,26 +36,32 @@ class AskCoinCommand extends Command
             "Enter your second currency : ", "USD"
         ));
         $amount = $helper->ask($input, $output, new Question(
-           "Please enter the amount of currency to be exchanged : ", 1
+            "Please enter the amount of currency to be exchanged : ", 1
         ));
 
 
-        $pairCurr = new LinkCreator();
-        $pairCurr->askCurrency($curr1, $curr2, $amount);
+        $httpClient = HttpClient::create();
+        $response = $httpClient->request('GET',
+            'https://api.coinpaprika.com/v1/'
+        );
+
+        $baseUrl = 'https://api.coinpaprika.com/v1/';
+        $price1 = $baseUrl . $curr1;
+        var_dump($price1);
 
 
-//        $response = new SymfonyHttp();
+//        $response = $httpClient->getResponse($link);
+
+
+
 //        $response = $client->request(
 //            'GET',
 //            'https://api.coinpaprika.com/v1/'
 //        );
 
-//
-//        $response = $httpClient->getResponse($link);
-//
+//        $response = $httpClient->getResponse
+
 //        $ret = new ResponseParser($response)
-
-
 
         $message = sprintf("Your currencies are %s/%s%s", $curr1, $curr2, $amount);
 
