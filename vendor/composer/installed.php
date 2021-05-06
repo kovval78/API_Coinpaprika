@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '555230a50615fa6b4605a84f720606cad1e5e934',
+    'reference' => 'dc26ccad32ebb1a803eb6a3053e963ad464436c6',
     'name' => 'kkowalczyk/api_coin',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '555230a50615fa6b4605a84f720606cad1e5e934',
+      'reference' => 'dc26ccad32ebb1a803eb6a3053e963ad464436c6',
     ),
     'php-http/async-client-implementation' => 
     array (

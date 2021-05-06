@@ -5,7 +5,8 @@
     "require": {
         "symfony/console": "5.x-dev",
         "symfony/http-client": "5.x-dev",
-        "symfony/var-dumper": "5.x-dev"
+        "symfony/var-dumper": "5.x-dev",
+      "ext-bcmath": "*"
     },
     "license": "MIT",
     "authors": [
