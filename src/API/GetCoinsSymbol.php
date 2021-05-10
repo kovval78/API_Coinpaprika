@@ -4,17 +4,16 @@ namespace App\API;
 
 class GetCoinsSymbol
 {
-
     public $askFirstCurrencyId;
     public $askSecondCurrencyId;
 
     public function __construct($arrayCoinsData, $askFirstCurrency, $askSecondCurrency)
     {
         foreach ($arrayCoinsData as $value) {
-            if ($value['symbol'] == $askFirstCurrency) {
+            if ($value['symbol'] == strtoupper($askFirstCurrency)){
                 $this->askFirstCurrencyId = $value['id'];
             }
-            if ($value['symbol'] == $askSecondCurrency) {
+            if ($value['symbol'] == strtoupper($askSecondCurrency)) {
                 $this->askSecondCurrencyId = $value['id'];
             }
         }

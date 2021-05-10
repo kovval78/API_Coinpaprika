@@ -8,16 +8,22 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 class GetCoinsData
 {
     protected $httpClient;
-    protected $baseEndpoint = 'https://api.coinpaprika.com/v1/';  //obsługa błędów
+    protected $requestArray;
+    protected $baseEndpoint = 'https://api.coinpaprika.com/v1/';
 
     public function __construct()
     {
         $this->httpClient = HttpClient::create();
     }
 
-    public function getCoins()
-//    : ResponseInterface
+    public function getCoins(): array
     {
-        return $this->httpClient->request('GET', $this->baseEndpoint . 'coins/')->toArray();
+        $this->baseEndpoint = filter_var($this->baseEndpoint, FILTER_VALIDATE_URL);
+        if ($this->baseEndpoint === false) {
+            exit('Invalid URL' . PHP_EOL);
+        }
+        $this->requestArray = $this->httpClient->request('GET', $this->baseEndpoint . 'coins/');
+        return $this->requestArray->toArray();
     }
 }
+

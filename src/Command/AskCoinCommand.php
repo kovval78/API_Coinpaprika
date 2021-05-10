@@ -2,14 +2,14 @@
 
 namespace App\Command;
 
-use App\API\GetCoinsData;
-use App\API\GetCoinsSymbol;
-use App\API\GetResponse;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
+use App\API\GetCoinsData;
+use App\API\GetCoinsSymbol;
+use App\API\GetResponse;
+use App\Messages\FinalExchangeMessage;
 
 class AskCoinCommand extends Command
 {
@@ -50,13 +50,17 @@ class AskCoinCommand extends Command
 // GetCoinsSymbol
 
 // GetResponse
-        $responsePrice = new GetResponse();
-        $responsePrice->responseCoinsPrice($askFirstCurrencyId, $askSecondCurrencyId, $askFirstCurrency, $askSecondCurrency, $currencyAmount);
+        $responsePrice = new GetResponse($askFirstCurrencyId, $askSecondCurrencyId);
+        $priceFirstCurrency = $responsePrice->priceFirstCurrency;
+        $priceSecondCurrency = $responsePrice->priceSecondCurrency;
+// GetResponse
 
-        $output->writeln($responsePrice->infoMessage);
-        $output->writeln($responsePrice->finalMessage);
-//GetResponse
+// FinalExchangeMessage
+        $finalMessage = new FinalExchangeMessage($priceFirstCurrency, $priceSecondCurrency, $askFirstCurrency,$askSecondCurrency, $currencyAmount);
+// FinalExchangeMessage
 
+        $output->writeln($finalMessage->infoMessage);
+        $output->writeln($finalMessage->finalMessage);
         return Command::SUCCESS;
     }
 }
