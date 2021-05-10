@@ -40,7 +40,7 @@ class AskCoinCommand extends Command
 
 // GetCoinsData
         $sendGetRequest = new GetCoinsData();
-        $arrayCoinsData = $sendGetRequest->getCoins();
+        $arrayCoinsData = $sendGetRequest->getCoins()->toArray();
 // GetCoinsData
 
 // GetCoinsSymbol

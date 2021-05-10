@@ -10,15 +10,15 @@ class GetCoinsSymbol
     public function __construct($arrayCoinsData, $askFirstCurrency, $askSecondCurrency)
     {
         foreach ($arrayCoinsData as $value) {
-            if ($value['symbol'] == strtoupper($askFirstCurrency)){
+            if ($value['symbol'] === strtoupper($askFirstCurrency)){
                 $this->askFirstCurrencyId = $value['id'];
             }
-            if ($value['symbol'] == strtoupper($askSecondCurrency)) {
+            if ($value['symbol'] === strtoupper($askSecondCurrency)) {
                 $this->askSecondCurrencyId = $value['id'];
             }
         }
 
-        if ($this->askFirstCurrencyId == null || $this->askSecondCurrencyId == null) {
+        if ($this->askFirstCurrencyId === null || $this->askSecondCurrencyId === null) {
             echo "The currency with the symbol $askFirstCurrency or $askSecondCurrency was not found.";
             die();
         }

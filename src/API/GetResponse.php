@@ -7,12 +7,12 @@ use Symfony\Component\HttpClient\HttpClient;
 class GetResponse
 {
     protected $httpClient;
-    public $responseFirst;
-    public $responseSecond;
+    protected $responseFirst;
+    protected $responseSecond;
     public $priceFirstCurrency;
     public $priceSecondCurrency;
-    public $baseEndpoint = 'https://api.coinpaprika.com/v1/coins/';
-    public $endpointPath = '/ohlcv/today/';
+    protected $baseEndpoint = 'https://api.coinpaprika.com/v1/coins/';
+    protected $endpointPath = '/ohlcv/today/';
 
     public function __construct($askFirstCurrencyId, $askSecondCurrencyId)
     {
