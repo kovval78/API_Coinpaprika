@@ -2,13 +2,13 @@
 
 namespace App\Command;
 
-use App\API\ApiClient;
+use App\API\GetCoinsData;
+use App\API\GetCoinsSymbol;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class AskCoinCommand extends Command
 {
@@ -40,35 +40,41 @@ class AskCoinCommand extends Command
 
         bcscale(5);
 
-        $getapi = new ApiClient();
-        $getapi->getCoins();
+// GetCoinsData
+        $httpClient = HttpClient::create();
+        $sendGetRequest = new GetCoinsData();
+        $arrayCoinsData = $sendGetRequest->getCoins();
+// GetCoinsData
 
-        $coins = $getapi->getCoins();
-        $httpClient = $getapi->getCoins(); //zmienić nazwę
+// GetCoinsSymbol
+        $coinsSymbol = new GetCoinsSymbol($arrayCoinsData, $askFirstCurrency, $askSecondCurrency);
+        $askFirstCurrencyId = $coinsSymbol->askFirstCurrencyId;
+        $askSecondCurrencyId = $coinsSymbol->askSecondCurrencyId;
+// GetCoinsSymbol
 
 
-        $askFirstCurrencyId = null;
-        $askSecondCurrencyId = null;
-        foreach($coins as $coin) {
-            if ($coin['symbol'] == $askFirstCurrency) {
-                $askFirstCurrencyId = $coin['id'];
-            }
-            if ($coin['symbol'] == $askSecondCurrency) {
-                $askSecondCurrencyId = $coin['id'];
-            }
-        }
-
-        if ($askFirstCurrencyId == null || $askSecondCurrencyId == null) {
-            echo "The currency with the symbol $askFirstCurrency or $askSecondCurrency was not found.";
-            die();
-        }
+//        $askFirstCurrencyId = null;
+//        $askSecondCurrencyId = null;
+//
+//        foreach($arrayCoinsData as $coin) {
+//            if ($coin['symbol'] == $askFirstCurrency) {
+//                $askFirstCurrencyId = $coin['id'];
+//            }
+//            if ($coin['symbol'] == $askSecondCurrency) {
+//                $askSecondCurrencyId = $coin['id'];
+//            }
+//        }
+//
+//        if ($askFirstCurrencyId == null || $askSecondCurrencyId == null) {
+//            echo "The currency with the symbol $askFirstCurrency or $askSecondCurrency was not found.";
+//            die();
+//        }
 
 
         $response = $httpClient->request('GET',
             'https://api.coinpaprika.com/v1/coins/' . $askFirstCurrencyId . '/ohlcv/today/'
         );
         $priceFirstCurrency = round($response->toArray()[0]['close'], 5);
-
 
         $response = $httpClient->request('GET',
             'https://api.coinpaprika.com/v1/coins/' . $askSecondCurrencyId . '/ohlcv/today/'

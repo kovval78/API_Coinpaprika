@@ -5,10 +5,10 @@ namespace App\API;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
-class ApiClient
+class GetCoinsData
 {
-    private $httpClient;
-    private $baseRootApi = 'https://api.coinpaprika.com/v1/';
+    public $httpClient;
+    public $baseEndpoint = 'https://api.coinpaprika.com/v1/';
 
     //obsługa błędów
 
@@ -17,8 +17,9 @@ class ApiClient
         $this->httpClient = HttpClient::create();
     }
 
-    public function getCoins(): ResponseInterface
+    public function getCoins()
+//    : ResponseInterface
     {
-        return $this->httpClient->request('GET', $this->baseRootApi . 'coins/');
+        return $this->httpClient->request('GET', $this->baseEndpoint . 'coins/')->toArray();
     }
 }

@@ -109,8 +109,8 @@ class ComposerStaticInit1039eb6a55ba3b7261ef61193d8a3f26
     );
 
     public static $classMap = array (
-        'App\\API\\ApiClient' => __DIR__ . '/../..' . '/src/API/ApiClient.php',
-        'App\\API\\ConvertIdToSymbol' => __DIR__ . '/../..' . '/src/API/ConvertIdToSymbol.php',
+        'App\\API\\GetCoinsData' => __DIR__ . '/../..' . '/src/API/GetCoinsData.php',
+        'App\\API\\GetCoinsSymbol' => __DIR__ . '/../..' . '/src/API/GetCoinsSymbol.php',
         'App\\BuiltInFunctions\\BuiltInFunctions' => __DIR__ . '/../..' . '/src/BuiltInFunctions/BuiltInFunctions.php',
         'App\\Command\\AskCoinCommand' => __DIR__ . '/../..' . '/src/Command/AskCoinCommand.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

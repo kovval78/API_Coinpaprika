@@ -6,8 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\API\\ApiClient' => $baseDir . '/src/API/ApiClient.php',
-    'App\\API\\ConvertIdToSymbol' => $baseDir . '/src/API/ConvertIdToSymbol.php',
+    'App\\API\\GetCoinsData' => $baseDir . '/src/API/GetCoinsData.php',
+    'App\\API\\GetCoinsSymbol' => $baseDir . '/src/API/GetCoinsSymbol.php',
     'App\\BuiltInFunctions\\BuiltInFunctions' => $baseDir . '/src/BuiltInFunctions/BuiltInFunctions.php',
     'App\\Command\\AskCoinCommand' => $baseDir . '/src/Command/AskCoinCommand.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
