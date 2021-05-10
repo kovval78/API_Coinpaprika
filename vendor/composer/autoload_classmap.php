@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\API\\GetCoinsData' => $baseDir . '/src/API/GetCoinsData.php',
     'App\\API\\GetCoinsSymbol' => $baseDir . '/src/API/GetCoinsSymbol.php',
+    'App\\API\\GetResponse' => $baseDir . '/src/API/GetResponse.php',
     'App\\BuiltInFunctions\\BuiltInFunctions' => $baseDir . '/src/BuiltInFunctions/BuiltInFunctions.php',
     'App\\Command\\AskCoinCommand' => $baseDir . '/src/Command/AskCoinCommand.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

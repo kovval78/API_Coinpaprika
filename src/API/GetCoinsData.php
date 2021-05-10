@@ -7,10 +7,8 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class GetCoinsData
 {
-    public $httpClient;
-    public $baseEndpoint = 'https://api.coinpaprika.com/v1/';
-
-    //obsługa błędów
+    protected $httpClient;
+    protected $baseEndpoint = 'https://api.coinpaprika.com/v1/';  //obsługa błędów
 
     public function __construct()
     {

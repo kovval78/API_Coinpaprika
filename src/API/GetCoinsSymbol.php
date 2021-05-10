@@ -4,6 +4,7 @@ namespace App\API;
 
 class GetCoinsSymbol
 {
+
     public $askFirstCurrencyId;
     public $askSecondCurrencyId;
 
