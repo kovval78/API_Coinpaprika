@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'dc26ccad32ebb1a803eb6a3053e963ad464436c6',
+    'reference' => 'a6786718f87b1dd8f4b67f032c1d956a925093fa',
     'name' => 'kkowalczyk/api_coin',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'dc26ccad32ebb1a803eb6a3053e963ad464436c6',
+      'reference' => 'a6786718f87b1dd8f4b67f032c1d956a925093fa',
     ),
     'php-http/async-client-implementation' => 
     array (
@@ -98,7 +98,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '959bfea5f92bd9b0b278f458a69cfd3f96dd411d',
+      'reference' => 'cbb69227421d7050e0525c96122c7f39c4e3c4fb',
     ),
     'symfony/deprecation-contracts' => 
     array (
@@ -213,7 +213,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '8f93c44e31d2692e782cc0bdede50cf116b01f4e',
+      'reference' => 'd2a6339f22cdb252d51d4359015cf1263ff187ae',
     ),
     'symfony/var-dumper' => 
     array (

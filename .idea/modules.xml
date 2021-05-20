@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../API_Coin/.idea/APi_Coin.iml" filepath="$PROJECT_DIR$/../API_Coin/.idea/APi_Coin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ApiCoinpaprika.iml" filepath="$PROJECT_DIR$/.idea/ApiCoinpaprika.iml" />
     </modules>
   </component>
 </project>
